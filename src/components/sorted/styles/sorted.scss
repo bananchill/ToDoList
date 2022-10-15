@@ -1,0 +1,34 @@
+.sorted {
+  display: flex;
+  justify-content: end;
+.title{
+  display: flex;
+  justify-content: flex-end;
+  .sorted_title {
+
+    width: fit-content;
+  }
+}
+
+
+  .block_combobox {
+
+    .combobox {
+
+      outline: none;
+      text-decoration: none;
+      border: none;
+      background: none;
+
+
+      .item_combobox {
+
+      }
+    }
+
+    .combobox:invalid:focus {
+
+    }
+  }
+
+}

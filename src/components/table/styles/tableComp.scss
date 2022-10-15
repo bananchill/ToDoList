@@ -1,0 +1,179 @@
+.table_main {
+  margin-top: 1rem;
+  width: 100%;
+
+  .table {
+    width: 100%;
+    border-bottom: 0.5px solid var(--placeholder100);
+    table-layout: fixed;
+    border-spacing: 0 10px ;
+    thead {
+
+    }
+    thead .headers {
+
+      .empty {
+        width: 5%;
+      }
+
+      .empty, .title {
+        border-right: 0.5px solid var(--placeholder100);
+      }
+
+      .empty:last-child, .title:last-child {
+        border-right: none;
+      }
+
+      th:nth-child(2) {
+        width: 75%;
+      }
+
+      th:nth-child(3) {
+        width: 10%;
+
+      }
+
+      th:nth-child(4) {
+        width: 10%;
+
+      }
+
+      .title {
+        padding: 0.1vh 0 0 0.1vw;
+        font-family: 'LDVela-Bold';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 132%;
+        width: 47px;
+        height: 18px;
+
+        span {
+          opacity: 1;
+          filter: alpha(Opacity=100);
+          padding-left: 1rem;
+          float: left;
+          color: var(--text100);
+          font-family: 'LDVela-Bold';
+          font-style: normal;
+          font-size: 16px;
+          line-height: 132%;
+        }
+      }
+    }
+
+    thead .body {
+      border-bottom: 0.5px solid var(--placeholder100);
+
+      .data, .td_checkBox {
+
+        padding: 1vw 0.5vw 0.5vw 0.5vw;
+        border-top: 0.5px solid var(--placeholder100);
+      }
+
+      .td_checkBox {
+
+        input[type="checkbox"] {
+          display: none;
+        }
+
+        label {
+          color: #000;
+          cursor: default;
+          font-weight: normal;
+          vertical-align: middle;
+        }
+
+        /* формируем внешний вид чекбокса в псевдоэлементе before */
+        label:before {
+          border-radius: 50%;
+          content: "";
+          color: #000;
+          display: inline-block;
+          font: 1vw/1.5vh Arial;
+          position: relative;
+          text-align: center;
+          text-indent: 0px;
+          width: 1.1vw;
+          height: 1.4vh;
+          background: #FFF;
+          border: 1px solid var(--completed100);
+          border-image: initial;
+          vertical-align: middle;
+        }
+
+        /* вариации внешнего вида в зав-ти от статуса checkbox */
+        /* checked */
+        input:checked + label:before {
+          display: flex;
+          flex-direction: column-reverse;
+          justify-content: space-around;
+          content: "\2713";
+          text-shadow: 0.3px 0.3px 0.3px var(--completed100);
+        }
+
+        /* disabled */
+        input:disabled + label:before {
+          background: #eee;
+          color: #aaa;
+        }
+      }
+
+      .data {
+        font-family: 'LDVela-Bold';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 132%;
+
+        .accepted {
+          span {
+            width: 76px;
+            height: 18px;
+
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 1439px) {
+  .table_main {
+    margin-top: 1rem;
+    width: 100%;
+
+    .table {
+      width: 100%;
+      border-bottom: 0.5px solid var(--placeholder100);
+      table-layout: fixed;
+      border-spacing: 0 10px ;
+      thead {
+
+      }
+      thead .headers {
+
+        .title {
+          padding: 0.1vh 0 0 0.1vw;
+          font-family: 'LDVela-Bold';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 132%;
+          width: 47px;
+          height: 18px;
+
+          span {
+            word-wrap: break-word;
+          }
+        }
+      }
+
+      thead .body {
+        .data {
+          word-wrap: break-word;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
