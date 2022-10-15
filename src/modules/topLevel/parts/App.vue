@@ -179,7 +179,6 @@ export default {
           }
       )
       this.setStorage()
-      this.findData
     },
     setStorage() {
       const dataStorage = {
@@ -189,6 +188,7 @@ export default {
 
       }
       localStorage.setItem("data_storage", JSON.stringify(dataStorage))
+      this.findData
     },
     toggleVisiblePopup() {
       this.isVisiblePopUp = !this.isVisiblePopUp
@@ -202,8 +202,9 @@ export default {
             String(today.getMonth() + 1).padStart(2, '0') + '.' + today.getFullYear()
       }
       this.data.push(newObject);
+
       this.setStorage()
-      this.findData
+
     }
 
   }
