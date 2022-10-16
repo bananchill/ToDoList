@@ -13,6 +13,7 @@
          Описание
        </span>
         <input type="text" v-model="newTask" placeholder="Введите описание">
+        <span v-show="incorrectData" style="color: red; margin-top: 10px;">Введите данные</span>
       </div>
       <div class="add">
         <button @click="addNewTask"> Создать</button>
@@ -33,6 +34,7 @@ export default {
   data() {
     return {
       newTask: '',
+      incorrectData: false
     }
   },
   emits: ["update:isVisiblePopUp", "addTask"],
@@ -53,8 +55,12 @@ export default {
       this.$emit('update:isVisiblePopUp', !this.isVisiblePopUp)
     },
     addNewTask() {
-      this.$emit('addTask', this.newTask)
-      this.closePopUp();
+      if (this.newTask) {
+        this.$emit('addTask', this.newTask)
+        this.closePopUp();
+        this.incorrectData = false
+      } else
+        this.incorrectData = true
     }
   }
 }
