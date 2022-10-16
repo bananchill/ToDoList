@@ -80,6 +80,8 @@ let data = [
     date: "20.02.2022",
   },
 ] // использую это, так как нет сервера и не могу взять другие данные похожие в фигме
+
+
 // eslint-disable-next-line no-unused-vars
 const sortingBy = [
   {
